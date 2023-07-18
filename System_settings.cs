@@ -32,6 +32,8 @@ namespace KTV_management_system
 
             Member_refresh();
 
+            commodityType_flushed();
+
             DbHelper.skinCollections(skinComboBox1, "select [Private_rooms_type_ID],[type_Name] from [dbo].[Type_of_private_room]", "Private_rooms_type_ID", "type_Name", "所有包间");
 
             Inquire();
@@ -252,6 +254,11 @@ namespace KTV_management_system
         private void skinButton11_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        public void commodityType_flushed()
+        {
+            DbHelper.skinDataGridView(skinDataGridView4, "select [CommodityTypeID], [TypeName], [Waiter] = (case [Waiter] when '1' then '需要' when '0' then '不需要' end) from [dbo].[commodityType]");
         }
     }
 }
