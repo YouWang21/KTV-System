@@ -237,12 +237,16 @@ namespace KTV_management_system
 
         private void skinButton9_Click(object sender, EventArgs e)
         {
-
+            Member_Deletion();
         }
 
         public void Member_Deletion()
         {
-            DbHelper.executeNonQuery("");
+            if (MessageBox.Show("该操作不可恢复，是否要执行删除？", "系统提示", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                DbHelper.executeNonQuery($"delete from [dbo].[Member] where [TypeName] = '{skinDataGridView3.Rows[skinDataGridView3.CurrentCell.RowIndex].Cells["Column10"].Value}'");
+                Member_refresh();
+            }
         }
 
         private void skinButton11_Click(object sender, EventArgs e)
