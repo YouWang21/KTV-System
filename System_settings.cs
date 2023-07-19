@@ -45,6 +45,7 @@ namespace KTV_management_system
                     ((Form)item).Close();
                 }
             }
+
             subForm.TopLevel = false;// 将子窗体设置为非顶级控件
             subForm.FormBorderStyle = FormBorderStyle.None;//设置无边框
             subForm.Parent = metroTabPage;//设置窗体容器
