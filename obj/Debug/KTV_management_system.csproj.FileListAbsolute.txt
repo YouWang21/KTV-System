@@ -70,3 +70,6 @@ D:\vsCode2019\WindowsFormsApp3\KTV-system\obj\Debug\KTV_management_system.csproj
 D:\vsCode2019\WindowsFormsApp3\KTV-system\obj\Debug\KTV_management_system.csproj.CopyComplete
 D:\vsCode2019\WindowsFormsApp3\KTV-system\obj\Debug\KTV_management_system.exe
 D:\vsCode2019\WindowsFormsApp3\KTV-system\obj\Debug\KTV_management_system.pdb
+D:\vsCode2019\WindowsFormsApp3\KTV-system\obj\Debug\KTV_management_system.Item_merchandise.resources
+D:\vsCode2019\WindowsFormsApp3\KTV-system\obj\Debug\KTV_management_system.Private_room_settings.resources
+D:\vsCode2019\WindowsFormsApp3\KTV-system\obj\Debug\KTV_management_system.Membership_Settings.resources

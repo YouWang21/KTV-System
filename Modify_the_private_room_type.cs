@@ -127,7 +127,6 @@ namespace KTV_management_system
                             [Fold_rate] = '{skinTextBox5.Text}'
                             where [type_Name] = '{Type}'");
 
-                            MessageBox.Show($"{skinComboBox2.SelectedValue}+{skinComboBox3.SelectedValue}");
                             Close();
                         }
                         else
