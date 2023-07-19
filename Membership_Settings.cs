@@ -19,7 +19,7 @@ namespace KTV_management_system
 
         public void Member_refresh()
         {
-            DbHelper.skinDataGridView(skinDataGridView3, "select [memberID], [TypeName], [Initial_Points], [Fold_rate] from [dbo].[Member]");
+            DbHelper.skinDataGridView(skinDataGridView3, "select [memberID], [TypeName], [Initial_Points], [Fold_rate] from [dbo].[Member]","");
         }
 
         public void Member_Deletion()
@@ -59,11 +59,6 @@ namespace KTV_management_system
             add_Member.ShowDialog();
 
             Member_refresh();
-        }
-
-        private void skinButton11_Click(object sender, EventArgs e)
-        {
-            Close();
         }
     }
 }

@@ -47,7 +47,6 @@ namespace KTV_management_system
             this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.skinPanel4 = new CCWin.SkinControl.SkinPanel();
-            this.skinTextBox1 = new CCWin.SkinControl.SkinTextBox();
             this.skinLabel3 = new CCWin.SkinControl.SkinLabel();
             this.skinComboBox2 = new CCWin.SkinControl.SkinComboBox();
             this.skinLabel2 = new CCWin.SkinControl.SkinLabel();
@@ -64,6 +63,7 @@ namespace KTV_management_system
             this.Column22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.skinPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.skinDataGridView4)).BeginInit();
             this.skinPanel4.SuspendLayout();
@@ -216,7 +216,7 @@ namespace KTV_management_system
             // skinPanel4
             // 
             this.skinPanel4.BackColor = System.Drawing.Color.Transparent;
-            this.skinPanel4.Controls.Add(this.skinTextBox1);
+            this.skinPanel4.Controls.Add(this.textBox1);
             this.skinPanel4.Controls.Add(this.skinLabel3);
             this.skinPanel4.Controls.Add(this.skinComboBox2);
             this.skinPanel4.Controls.Add(this.skinLabel2);
@@ -234,47 +234,6 @@ namespace KTV_management_system
             this.skinPanel4.Size = new System.Drawing.Size(882, 316);
             this.skinPanel4.TabIndex = 4;
             // 
-            // skinTextBox1
-            // 
-            this.skinTextBox1.BackColor = System.Drawing.Color.Transparent;
-            this.skinTextBox1.DownBack = null;
-            this.skinTextBox1.Icon = null;
-            this.skinTextBox1.IconIsButton = false;
-            this.skinTextBox1.IconMouseState = CCWin.SkinClass.ControlState.Normal;
-            this.skinTextBox1.IsPasswordChat = '\0';
-            this.skinTextBox1.IsSystemPasswordChar = false;
-            this.skinTextBox1.Lines = new string[0];
-            this.skinTextBox1.Location = new System.Drawing.Point(348, 14);
-            this.skinTextBox1.Margin = new System.Windows.Forms.Padding(0);
-            this.skinTextBox1.MaxLength = 32767;
-            this.skinTextBox1.MinimumSize = new System.Drawing.Size(28, 28);
-            this.skinTextBox1.MouseBack = null;
-            this.skinTextBox1.MouseState = CCWin.SkinClass.ControlState.Normal;
-            this.skinTextBox1.Multiline = false;
-            this.skinTextBox1.Name = "skinTextBox1";
-            this.skinTextBox1.NormlBack = null;
-            this.skinTextBox1.Padding = new System.Windows.Forms.Padding(5);
-            this.skinTextBox1.ReadOnly = false;
-            this.skinTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.skinTextBox1.Size = new System.Drawing.Size(69, 28);
-            // 
-            // 
-            // 
-            this.skinTextBox1.SkinTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.skinTextBox1.SkinTxt.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.skinTextBox1.SkinTxt.Font = new System.Drawing.Font("微软雅黑", 9.75F);
-            this.skinTextBox1.SkinTxt.Location = new System.Drawing.Point(5, 5);
-            this.skinTextBox1.SkinTxt.Name = "BaseText";
-            this.skinTextBox1.SkinTxt.Size = new System.Drawing.Size(59, 22);
-            this.skinTextBox1.SkinTxt.TabIndex = 0;
-            this.skinTextBox1.SkinTxt.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
-            this.skinTextBox1.SkinTxt.WaterText = "";
-            this.skinTextBox1.TabIndex = 10;
-            this.skinTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.skinTextBox1.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
-            this.skinTextBox1.WaterText = "";
-            this.skinTextBox1.WordWrap = true;
-            // 
             // skinLabel3
             // 
             this.skinLabel3.AutoSize = true;
@@ -290,12 +249,14 @@ namespace KTV_management_system
             // skinComboBox2
             // 
             this.skinComboBox2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.skinComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.skinComboBox2.FormattingEnabled = true;
             this.skinComboBox2.Location = new System.Drawing.Point(140, 14);
             this.skinComboBox2.Name = "skinComboBox2";
             this.skinComboBox2.Size = new System.Drawing.Size(121, 26);
             this.skinComboBox2.TabIndex = 8;
             this.skinComboBox2.WaterText = "";
+            this.skinComboBox2.SelectedIndexChanged += new System.EventHandler(this.skinComboBox2_SelectedIndexChanged);
             // 
             // skinLabel2
             // 
@@ -405,7 +366,8 @@ namespace KTV_management_system
             dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             this.skinDataGridView5.RowsDefaultCellStyle = dataGridViewCellStyle16;
             this.skinDataGridView5.RowTemplate.Height = 23;
-            this.skinDataGridView5.Size = new System.Drawing.Size(770, 250);
+            this.skinDataGridView5.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.skinDataGridView5.Size = new System.Drawing.Size(770, 240);
             this.skinDataGridView5.TabIndex = 0;
             this.skinDataGridView5.TitleBack = null;
             this.skinDataGridView5.TitleBackColorBegin = System.Drawing.Color.White;
@@ -414,6 +376,7 @@ namespace KTV_management_system
             // Column16
             // 
             this.Column16.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column16.DataPropertyName = "project_ID";
             this.Column16.HeaderText = "编号";
             this.Column16.MinimumWidth = 6;
             this.Column16.Name = "Column16";
@@ -422,6 +385,7 @@ namespace KTV_management_system
             // Column17
             // 
             this.Column17.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column17.DataPropertyName = "Name";
             this.Column17.HeaderText = "名称";
             this.Column17.MinimumWidth = 6;
             this.Column17.Name = "Column17";
@@ -430,6 +394,7 @@ namespace KTV_management_system
             // Column18
             // 
             this.Column18.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column18.DataPropertyName = "unit";
             this.Column18.HeaderText = "单位";
             this.Column18.MinimumWidth = 6;
             this.Column18.Name = "Column18";
@@ -438,6 +403,7 @@ namespace KTV_management_system
             // Column19
             // 
             this.Column19.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column19.DataPropertyName = "Preset_unit_price";
             this.Column19.HeaderText = "单价";
             this.Column19.MinimumWidth = 6;
             this.Column19.Name = "Column19";
@@ -446,6 +412,7 @@ namespace KTV_management_system
             // Column20
             // 
             this.Column20.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column20.DataPropertyName = "cost";
             this.Column20.HeaderText = "成本价";
             this.Column20.MinimumWidth = 6;
             this.Column20.Name = "Column20";
@@ -454,6 +421,7 @@ namespace KTV_management_system
             // Column21
             // 
             this.Column21.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column21.DataPropertyName = "TypeName";
             this.Column21.HeaderText = "项目类别";
             this.Column21.MinimumWidth = 6;
             this.Column21.Name = "Column21";
@@ -462,6 +430,7 @@ namespace KTV_management_system
             // Column22
             // 
             this.Column22.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column22.DataPropertyName = "Repository";
             this.Column22.HeaderText = "存库";
             this.Column22.MinimumWidth = 6;
             this.Column22.Name = "Column22";
@@ -470,6 +439,7 @@ namespace KTV_management_system
             // Column25
             // 
             this.Column25.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column25.DataPropertyName = "exchange";
             this.Column25.HeaderText = "能否兑换";
             this.Column25.MinimumWidth = 6;
             this.Column25.Name = "Column25";
@@ -478,10 +448,19 @@ namespace KTV_management_system
             // Column26
             // 
             this.Column26.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column26.DataPropertyName = "Redeem_points";
             this.Column26.HeaderText = "兑换积分";
             this.Column26.MinimumWidth = 6;
             this.Column26.Name = "Column26";
             this.Column26.ReadOnly = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(351, 15);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 25);
+            this.textBox1.TabIndex = 11;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // Item_merchandise
             // 
@@ -515,7 +494,6 @@ namespace KTV_management_system
         private System.Windows.Forms.DataGridViewTextBoxColumn Column14;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column15;
         private CCWin.SkinControl.SkinPanel skinPanel4;
-        private CCWin.SkinControl.SkinTextBox skinTextBox1;
         private CCWin.SkinControl.SkinLabel skinLabel3;
         private CCWin.SkinControl.SkinComboBox skinComboBox2;
         private CCWin.SkinControl.SkinLabel skinLabel2;
@@ -532,5 +510,6 @@ namespace KTV_management_system
         private System.Windows.Forms.DataGridViewTextBoxColumn Column22;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column25;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column26;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

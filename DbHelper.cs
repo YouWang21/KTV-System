@@ -102,11 +102,26 @@ namespace KTV_management_system
             }
         }
 
-        public static void skinDataGridView(SkinDataGridView skinDataGridView,string sql)
+        public static void skinDataGridView(SkinDataGridView skinDataGridView,string sql,string Pinyin)
         {
             DataTable dataTable = getDataTable(sql);
 
-            skinDataGridView.DataSource = dataTable;
+            if (!string.IsNullOrEmpty(Pinyin))
+            {
+                foreach (DataRow item in dataTable.Rows)
+                {
+                    var str = PingYinHelper.GetFirstSpell(item[1].ToString()).ToLower();
+
+                    if (str.IndexOf(Pinyin.ToUpper()) >= 0)
+                    {
+                        skinDataGridView.DataSource = item.Table;
+                    }
+                }
+            }
+            else
+            {
+                skinDataGridView.DataSource = dataTable;
+            }
         }
 
         public static void skinCollections(SkinComboBox skinComboBox,string sql,string value,string name,string Default)

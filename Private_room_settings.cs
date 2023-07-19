@@ -35,7 +35,7 @@ namespace KTV_management_system
 
         private void Inquire()
         {
-            DbHelper.skinDataGridView(skinDataGridView2, tmp);
+            DbHelper.skinDataGridView(skinDataGridView2, tmp,"");
             tmp = sql;
         }
 
@@ -99,7 +99,7 @@ namespace KTV_management_system
             DbHelper.skinDataGridView(skinDataGridView1, @"select [type_Name],[Minimum_consumption],b.[manner_Name],[Capacity],c.[manner_Name] as 'Ordinary_festivals',d.[manner_Name] as 'Special_holidays',[Discount_conditions],[Fold_rate] from [dbo].[Type_of_private_room] as a
             left join[dbo].[Billing_type] as b on a.Billing_method = b.manner_ID
             left join[dbo].[Billing_type] as c on a.Ordinary_festivals = c.manner_ID
-            left join[dbo].[Billing_type] as d on a.Special_holidays = d.manner_ID");
+            left join[dbo].[Billing_type] as d on a.Special_holidays = d.manner_ID","");
         }
 
         public void delete_type()
