@@ -137,39 +137,5 @@ namespace KTV_management_system
             skinComboBox.DisplayMember = name;
             skinComboBox.DataSource = dataTable;
         }
-
-        /*
-         public static void Added_dynamically(MetroTabControl metroTabControl,SkinContextMenuStrip skinContextMenuStrip,ImageList imageListMin, ImageList imageListMax, string sql)
-        {
-            DataTable dataTable = getDataTable(sql);
-
-            foreach (DataRow dataRow in dataTable.Rows)
-            {
-                TabPage tabPage = new TabPage(dataRow[0].ToString());
-                metroTabControl.TabPages.Add(tabPage);
-
-                SkinListView skinListView = new SkinListView();
-
-                skinListView.Columns.Add("包间号");
-                skinListView.Columns.Add("状态");
-                skinListView.Columns.Add("消费金额");
-                skinListView.Columns.Add("进店时间");
-                skinListView.Columns.Add("已用时间");
-                skinListView.Columns.Add("备注");
-
-                skinListView.Dock = DockStyle.Fill;
-                skinListView.HideSelection = false;
-                skinListView.HeaderStyle = ColumnHeaderStyle.Nonclickable;
-                skinListView.View = View.Details;
-                skinListView.GridLines = true;
-                skinListView.FullRowSelect = true;
-                skinListView.ContextMenuStrip = skinContextMenuStrip;
-                skinListView.SmallImageList = imageListMin;
-                skinListView.LargeImageList = imageListMax;
-
-                tabPage.Controls.Add(skinListView);
-            }
-        }
-         */
     }
 }
